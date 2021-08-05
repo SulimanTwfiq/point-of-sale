@@ -13,7 +13,12 @@ module.exports = {
         sans: ["Russo One", ...defaultTheme.fontFamily.sans],
         barlow600Bold: ["Barlow"],
       },
+      gridTemplateColumns: {
+        homePage: "3fr 1fr",
+      },
       colors: {
+        transparent: "transparent",
+        current: "currentColor",
         primary: {
           50: "#f9f9fb",
           100: "#f0f1f5",
@@ -55,7 +60,7 @@ module.exports = {
           1100: "#3e1109",
         },
         bordersColor: "#393C49",
-        inputColot: "#2D303E",
+        inputColor: "#2D303E",
       },
     },
   },

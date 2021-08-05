@@ -10,7 +10,7 @@ const TextInput = ({ id, label, placeholder }) => {
       )}
 
       <input
-        class="shadow appearance-none bg-inputColot border border-bordersColor rounded w-64  h-10 py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline"
+        class="shadow appearance-none bg-inputColor border border-bordersColor rounded w-64  h-10 py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline"
         id={id}
         type="text"
         placeholder={placeholder}
