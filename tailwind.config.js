@@ -17,6 +17,9 @@ module.exports = {
         cartProductItemContainer: "1fr 50px",
         cartProductItemTopSection: "50px 1fr 50px",
       },
+      boxShadow: {
+        tertiary: "0px 3.7728378772735596px 11.318513870239258px 0px #EA7C694D",
+      },
       colors: {
         transparent: "transparent",
         current: "currentColor",

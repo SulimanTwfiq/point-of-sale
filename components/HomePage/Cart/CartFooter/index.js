@@ -5,7 +5,9 @@ const CartFooter = () => {
     <div className="pt-5 mt-1 border-t border-[#393C49] ">
       <RowInfo title="Discount" total="$0" />
       <RowInfo title="Sub total" total="$21,03" />
-      <Button className="w-full h-[50px] font-bold shadow-lg mt-7">Continue to Payment</Button>
+      <Button className="w-full h-[50px] font-bold shadow-tertiary mt-7">
+        Continue to Payment
+      </Button>
     </div>
   )
 }

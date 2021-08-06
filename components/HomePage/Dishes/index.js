@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import Header from "./Header"
 import ChooseDishes from "./ChooseDishes"
-const Dishes = () => {
+const Dishes = ({ setCart }) => {
   return (
     <div className="p-6 ">
       <Header />
-      <ChooseDishes />
+      <ChooseDishes setCart={setCart} />
     </div>
   )
 }

@@ -22,7 +22,13 @@ const CartProductItem = () => {
       <div className="flex flex-col justify-between ">
         <p className="flex items-center h-full text-sm">$ 4,58</p>
         <Button variant="outline" className="px-3 py-2 border-tertiary-450">
-          <Image src={"/icons/common/deleteIcon.svg"} alt="delete icon" width={20} height={20} />
+          <Image
+            src={"/icons/common/deleteIcon.svg"}
+            className="rotate-[20deg]"
+            alt="delete icon"
+            width={20}
+            height={20}
+          />
         </Button>
       </div>
     </div>

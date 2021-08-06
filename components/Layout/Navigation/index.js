@@ -15,7 +15,7 @@ const Navigation = () => {
 const Logo = () => {
   return (
     <div
-      className={clsx("pt-2 px-2 translate-x-2.5 pb-0 mt-5 ml-3	h-14 w-14 bg-[#543C3B] rounded-2xl")}
+      className={clsx("pt-2 px-2 translate-x-2.5 pb-0 mt-5 ml-3	h-14 w-14 bg-[#543C3B] rounded-xl")}
     >
       <Image
         src={`/icons/pages/logo.svg`}
@@ -51,7 +51,7 @@ const PagesTabs = () => {
         >
           <Button
             variant={selectedPage === p.name ? "solid" : "none"}
-            className={"h-14 w-14"}
+            className={clsx("h-14 w-14", selectedPage === p.name && "shadow-tertiary")}
             onClick={() => setSelectedPage(p.name)}
           >
             <Image

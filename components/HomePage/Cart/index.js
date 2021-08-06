@@ -5,7 +5,7 @@ import CartProductItem from "./CartProductItem"
 import CartProductItemsListHeader from "./CartProductItemsListHeader"
 import CartFooter from "./CartFooter"
 
-const Cart = () => {
+const Cart = ({ cart, setCart }) => {
   const [selectedOrderType, setSelectedOrderType] = useState(orderTypes[0])
   return (
     <div className="flex flex-col justify-between p-5 bg-secondary-1100">
