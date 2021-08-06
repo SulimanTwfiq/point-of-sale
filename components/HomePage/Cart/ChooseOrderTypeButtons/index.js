@@ -3,10 +3,10 @@ import { orderTypes } from "utills/constants"
 
 const ChooseOrderTypeButtons = ({ selectedOrderType, setSelectedOrderType }) => {
   return (
-    <div className="mt-5">
+    <div className="my-5 space-x-2">
       {orderTypes.map((type) => (
         <Button
-          className="mr-3"
+          key={type}
           variant={type === selectedOrderType ? "solid" : "outline"}
           onClick={() => setSelectedOrderType(type)}
         >

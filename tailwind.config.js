@@ -14,7 +14,8 @@ module.exports = {
         barlow600Bold: ["Barlow"],
       },
       gridTemplateColumns: {
-        homePage: "3fr 1fr",
+        cartProductItemContainer: "1fr 50px",
+        cartProductItemTopSection: "50px 1fr 50px",
       },
       colors: {
         transparent: "transparent",
@@ -67,5 +68,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/line-clamp")],
 }
