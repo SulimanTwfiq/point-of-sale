@@ -6,7 +6,7 @@ import styles from "./Navigtation.module.css"
 
 const Navigation = () => {
   return (
-    <nav className="grid grid-rows-[70px,1fr] h-full rounded-tr-2xl rounded-br-2xl bg-secondary-1100">
+    <nav className="grid grid-rows-[90px,1fr] h-full rounded-tr-2xl rounded-br-2xl bg-secondary-1100">
       <Logo />
       <PagesTabs />
     </nav>
@@ -15,14 +15,14 @@ const Navigation = () => {
 const Logo = () => {
   return (
     <div
-      className={clsx("pt-3 px-3 translate-x-2.5 pb-0 mt-3 ml-3	h-14 w-14 bg-[#543C3B] rounded-2xl")}
+      className={clsx("pt-2 px-2 translate-x-2.5 pb-0 mt-5 ml-3	h-14 w-14 bg-[#543C3B] rounded-2xl")}
     >
       <Image
         src={`/icons/pages/logo.svg`}
         className={"rotate-[19deg]"}
         alt={"logo"}
-        width={40}
-        height={40}
+        width={60}
+        height={60}
       />
     </div>
   )
