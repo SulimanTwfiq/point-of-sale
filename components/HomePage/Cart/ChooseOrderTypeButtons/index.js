@@ -1,7 +1,10 @@
+import { useState } from "react"
 import { Button } from "components/shared"
 import { orderTypes } from "utills/constants"
 
-const ChooseOrderTypeButtons = ({ selectedOrderType, setSelectedOrderType }) => {
+const ChooseOrderTypeButtons = ({}) => {
+  const [selectedOrderType, setSelectedOrderType] = useState(orderTypes[0])
+
   return (
     <div className="my-5 space-x-2">
       {orderTypes.map((type) => (

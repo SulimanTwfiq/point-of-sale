@@ -1,8 +1,10 @@
 import React from "react"
 import Image from "next/image"
 import Dish from "public/Dish.png"
+import { formatPrice } from "utills/common"
 
-const DishCard = ({ onClick }) => {
+const DishCard = ({ item, onClick }) => {
+  const { name, price } = item
   return (
     <div
       onClick={onClick}
@@ -12,8 +14,8 @@ const DishCard = ({ onClick }) => {
         <Image src={Dish} alt={"TEMP_alt"} width={150} height={100} layout="fixed" />{" "}
       </div>
 
-      <h3>Spicy seasoned seafood noodles</h3>
-      <p className="mt-2 mb-1">$ 2.29</p>
+      <h3>{name}</h3>
+      <p className="mt-2 mb-1">{formatPrice(price)}</p>
       <p className="text-gray-400">20 Bowls available</p>
     </div>
   )
