@@ -35,6 +35,9 @@ export function makeServer({ environment = "test" } = {}) {
       this.namespace = "api"
       this.resource("menu")
       this.resource("meal")
+      this.namespace = "" // or this.namespace = "/"
+
+      this.passthrough()
     },
   })
 }

@@ -7,7 +7,6 @@ import { formatPrice } from "utills/common"
 
 const CartProductItem = ({ item, dispatchCart }) => {
   const { id, name, quantity, price } = item
-  console.log("quantity", quantity)
   return (
     <div className="grid gap-3 mb-6 grid-cols-cartProductItemContainer">
       {/* left section */}

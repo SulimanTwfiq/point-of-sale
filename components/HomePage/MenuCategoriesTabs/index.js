@@ -16,7 +16,6 @@ const MenuCategoriesTabs = ({ selectedCategory, setSelectedCategory }) => {
   if (isError) {
     return <span>Error: {error.message}</span>
   }
-  console.log("data", data)
   return (
     <Tabs>
       {data.menus.map((t) => (

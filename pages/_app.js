@@ -1,6 +1,7 @@
 import "tailwindcss/tailwind.css"
 import { makeServer } from "../mirage"
 import { QueryClient, QueryClientProvider } from "react-query"
+import Layout from "components/Layout"
 
 const queryClient = new QueryClient()
 
@@ -13,7 +14,9 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </QueryClientProvider>
   )
 }

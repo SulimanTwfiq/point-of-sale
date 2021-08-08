@@ -5,6 +5,6 @@ function fetchMenu() {
 }
 
 export const useMenuQuery = ({ options = {} } = {}) => {
-  console.log("options", options)
-  return useQuery("menu", fetchMenu, options)
+  const defaultOptions = { staleTime: 0 }
+  return useQuery("menu", fetchMenu, { ...defaultOptions, ...options })
 }
