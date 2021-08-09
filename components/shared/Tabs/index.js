@@ -5,7 +5,7 @@ import clsx from "clsx"
 const Tabs = ({ children }) => {
   return (
     <AnimateSharedLayout transition={{ duration: 0.5 }}>
-      <ul className="flex items-center pb-2 border-b border-bordersColor">{children}</ul>
+      <ul className="flex items-center pb-3 border-b border-bordersColor">{children}</ul>
     </AnimateSharedLayout>
   )
 }
@@ -13,7 +13,10 @@ export const Tab = ({ isActive = false, children, ...reset }) => {
   return (
     <motion.li
       animate
-      className={clsx(`cursor-pointer pr-5 text-white relative `, isActive && "text-tertiary-450")}
+      className={clsx(
+        `cursor-pointer pr-10 text-white relative text-sm`,
+        isActive && "text-tertiary-450"
+      )}
       {...reset}
     >
       {children}
