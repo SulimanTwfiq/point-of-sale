@@ -15,7 +15,7 @@ const HomePage = () => {
     <div className="grid h-screen grid-cols-[2fr,1fr]">
       {/* Left section  */}
       <div className="p-6 pb-0 ">
-        <Header setDishSearch={setDishSearch} />
+        <Header dishSearch={dishSearch} setDishSearch={setDishSearch} />
         <MenuCategoriesTabs
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
@@ -37,6 +37,6 @@ const HomePage = () => {
 }
 
 const SelectOrderType = () => {
-  return <Select options={orderTypes} />
+  return <Select className="w-32" options={orderTypes} />
 }
 export default HomePage
