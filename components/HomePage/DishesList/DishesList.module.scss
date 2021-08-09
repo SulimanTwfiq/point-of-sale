@@ -1,0 +1,10 @@
+.container {
+  height: calc(100vh - 249px);
+  overflow-y: scroll;
+  padding-top: 26px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

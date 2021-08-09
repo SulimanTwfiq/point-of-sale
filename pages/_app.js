@@ -2,6 +2,8 @@ import "tailwindcss/tailwind.css"
 import { makeServer } from "../mirage"
 import { QueryClient, QueryClientProvider } from "react-query"
 import Layout from "components/Layout"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 const queryClient = new QueryClient()
 
@@ -17,6 +19,7 @@ function MyApp({ Component, pageProps }) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <ToastContainer />
     </QueryClientProvider>
   )
 }

@@ -1,5 +1,6 @@
-import { Server, Model, RestSerializer, hasMany, belongsTo } from "miragejs"
-
+import { Server, Model, RestSerializer, hasMany, belongsTo, Factory } from "miragejs"
+import { randomIntFromInterval } from "utills/common"
+import faker from "faker"
 export function makeServer({ environment = "test" } = {}) {
   return new Server({
     environment,
@@ -20,15 +21,53 @@ export function makeServer({ environment = "test" } = {}) {
       }),
     },
 
+    factories: {
+      meal: Factory.extend({
+        name(i) {
+          const numberOfWords = randomIntFromInterval(1, 4)
+          const dishName = [...Array(numberOfWords).keys()].map(() => faker.lorem.word()).join(" ")
+          return dishName
+        },
+        price() {
+          return randomIntFromInterval(0, 50)
+        },
+        bowlsAvailable() {
+          return randomIntFromInterval(0, 1000)
+        },
+      }),
+    },
     seeds(server) {
-      let burgers = server.create("menu", { name: "burgers" })
-      let pizzas = server.create("menu", { name: "pizzas" })
+      let hotDishes = server.create("menu", { name: "Hot dishes" })
+      let coldDishes = server.create("menu", { name: "Cold dishes" })
+      let soup = server.create("menu", { name: "Soup" })
+      let grill = server.create("menu", { name: "Grill" })
+      let appetizer = server.create("menu", { name: "Appetizer" })
+      let Dessert = server.create("menu", { name: "Dessert" })
 
-      server.create("meal", { name: "meat pizza", price: 10, menu: pizzas })
-      server.create("meal", { name: "chicken pizza", price: 12, menu: pizzas })
-
-      //   burgers.createMeal({ mealName: "hey!" })
-      //   pizzas.createMeal({ mealName: "hey man" })
+      server.createList("meal", 10, {
+        menu: hotDishes,
+        img: "hot,dish",
+      })
+      server.createList("meal", 4, {
+        menu: coldDishes,
+        img: "cold,dish",
+      })
+      server.createList("meal", 12, {
+        menu: soup,
+        img: "soup",
+      })
+      server.createList("meal", 14, {
+        menu: grill,
+        img: "grill",
+      })
+      server.createList("meal", 3, {
+        menu: appetizer,
+        img: "appetizer",
+      })
+      server.createList("meal", 1, {
+        menu: Dessert,
+        img: "Dessert",
+      })
     },
 
     routes() {
@@ -36,7 +75,6 @@ export function makeServer({ environment = "test" } = {}) {
       this.resource("menu")
       this.resource("meal")
       this.namespace = "" // or this.namespace = "/"
-
       this.passthrough()
     },
   })

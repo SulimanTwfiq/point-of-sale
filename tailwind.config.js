@@ -6,20 +6,11 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      borderRadius: {
-        14: "14px",
-      },
       fontFamily: {
         sans: ["Russo One", ...defaultTheme.fontFamily.sans],
         barlow600Bold: ["Barlow"],
       },
-      gridTemplateColumns: {
-        cartProductItemContainer: "1fr 50px",
-        cartProductItemTopSection: "50px 1fr 50px",
-      },
-      boxShadow: {
-        tertiary: "0px 3.7728378772735596px 11.318513870239258px 0px #EA7C694D",
-      },
+
       colors: {
         transparent: "transparent",
         current: "currentColor",
@@ -64,7 +55,9 @@ module.exports = {
           1100: "#3e1109",
         },
         bordersColor: "#393C49",
-        inputColor: "#2D303E",
+      },
+      boxShadow: {
+        tertiary: "0px 3.7728378772735596px 11.318513870239258px 0px #EA7C694D",
       },
     },
   },

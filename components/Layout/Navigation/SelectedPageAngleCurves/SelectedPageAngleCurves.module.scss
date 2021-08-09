@@ -1,0 +1,26 @@
+.button-curve {
+  width: 20px;
+  height: 20px;
+  background-color: #252936;
+  position: absolute;
+  &--top {
+    top: -20px;
+    right: 10px;
+  }
+  &--bottom {
+    bottom: -20px;
+    right: 10px;
+  }
+  &__inside {
+    height: 100%;
+    width: 100%;
+    background-color: #1f1e2b;
+    z-index: 121233123123131;
+    &--top {
+      border-bottom-right-radius: 14px;
+    }
+    &--bottom {
+      border-top-right-radius: 14px;
+    }
+  }
+}

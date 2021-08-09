@@ -2,8 +2,8 @@ import { useEffect, useState } from "react"
 import { Button } from "components/shared"
 import Image from "next/image"
 import clsx from "clsx"
-import styles from "./Navigtation.module.css"
 import { useRouter } from "next/router"
+import SelectedPageAngleCurves from "./SelectedPageAngleCurves"
 
 const Navigation = () => {
   return (
@@ -13,24 +13,9 @@ const Navigation = () => {
     </nav>
   )
 }
-const Logo = () => {
-  return (
-    <div
-      className={clsx("pt-2 px-2 translate-x-2.5 pb-0 mt-5 ml-3	h-14 w-14 bg-[#543C3B] rounded-xl")}
-    >
-      <Image
-        src={`/icons/pages/logo.svg`}
-        className={"rotate-[19deg]"}
-        alt={"logo"}
-        width={60}
-        height={60}
-      />
-    </div>
-  )
-}
+
 const PagesTabs = () => {
   const router = useRouter()
-  console.log("router.query", router.pathname)
   const pages = [
     { name: "/", icon: "home-page.svg" },
     { name: "/discounts", icon: "discounts.svg" },
@@ -43,36 +28,53 @@ const PagesTabs = () => {
 
   return (
     <div className="flex flex-col justify-around">
-      {pages.map((p) => (
-        <div
-          key={p.icon}
-          className={clsx(
-            "py-3 px-3 translate-x-2.5 rounded-tl-2xl rounded-bl-2xl	",
-            router.pathname === p.name && "bg-primary-1100",
-            styles["button-curve"]
-          )}
-        >
-          <Button
-            variant={router.pathname === p.name ? "solid" : "none"}
-            className={clsx("h-14 w-14", router.pathname === p.name && "shadow-tertiary")}
-            onClick={() => {
-              console.log("p", p.name)
-              router.push(p.name)
-            }}
+      {pages.map((p) => {
+        const isItTheSelectedPage = router.pathname === p.name
+        return (
+          <div
+            key={p.icon}
+            className={clsx(
+              "py-3 px-3 translate-x-2.5 rounded-tl-2xl rounded-bl-2xl	",
+              isItTheSelectedPage && "bg-primary-1100"
+            )}
           >
-            <Image
-              src={`/icons/pages/${p.icon}`}
-              className={clsx(
-                router.pathname === p.name ? "brightness-0 invert" : "",
-                "rotate-[19deg]"
-              )}
-              alt={p.name}
-              width={22}
-              height={22}
-            />
-          </Button>
-        </div>
-      ))}
+            {isItTheSelectedPage && <SelectedPageAngleCurves />}
+
+            <Button
+              variant={isItTheSelectedPage ? "solid" : "none"}
+              className={clsx("h-14 w-14", isItTheSelectedPage && "shadow-tertiary")}
+              onClick={() => {
+                console.log("p", p.name)
+                router.push(p.name)
+              }}
+            >
+              <Image
+                src={`/icons/pages/${p.icon}`}
+                className={clsx(isItTheSelectedPage ? "brightness-0 invert" : "", "rotate-[19deg]")}
+                alt={p.name}
+                width={22}
+                height={22}
+              />
+            </Button>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
+const Logo = () => {
+  return (
+    <div
+      className={clsx("pt-2 px-2 translate-x-2.5 pb-0 mt-5 ml-3	h-14 w-14 bg-[#543C3B] rounded-xl")}
+    >
+      <Image
+        src={`/icons/pages/logo.svg`}
+        className={"rotate-[19deg]"}
+        alt={"logo"}
+        width={60}
+        height={60}
+      />
     </div>
   )
 }

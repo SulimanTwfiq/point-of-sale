@@ -13,7 +13,7 @@ const TextInput = ({ id, label, placeholder, type = "text", inputClassName, ...r
       <input
         className={clsx(
           inputClassName,
-          "w-full h-10 px-3 py-2 leading-tight text-gray-200 border rounded shadow appearance-none bg-inputColor border-bordersColor focus:outline-none focus:shadow-outline"
+          "w-full h-10 px-3 py-2 leading-tight text-gray-200 border rounded shadow appearance-none bg-[#2D303E] border-bordersColor focus:outline-none focus:shadow-outline"
         )}
         id={id}
         type={type}
