@@ -8,7 +8,12 @@ const CartProductItem = ({ item, dispatchCart }) => {
   const { id, name, quantity, price, img } = item
 
   return (
-    <div className="grid gap-3 mb-6 grid-cols-[1fr,50px]">
+    <div
+      // initial={{ y: -20 }}
+      // animate={{ y: 0 }}
+      // transition={{ duration: 0.3 }}
+      className="grid gap-3 mb-6 grid-cols-[1fr,50px]"
+    >
       {/* left column */}
       <div>
         <div className="grid gap-2 mb-2 grid-cols-[50px,1fr,50px]">
