@@ -37,8 +37,8 @@ export function makeServer({ environment = "test" } = {}) {
       }),
     },
     seeds(server) {
-      let hotDishes = server.create("menu", { name: "Hot dishes" })
-      let coldDishes = server.create("menu", { name: "Cold dishes" })
+      let hotDishes = server.create("menu", { name: "Hot Dishes" })
+      let coldDishes = server.create("menu", { name: "Cold Dishes" })
       let soup = server.create("menu", { name: "Soup" })
       let grill = server.create("menu", { name: "Grill" })
       let appetizer = server.create("menu", { name: "Appetizer" })
@@ -72,6 +72,7 @@ export function makeServer({ environment = "test" } = {}) {
 
     routes() {
       this.namespace = "api"
+      this.timing = 0
       this.resource("menu")
       this.resource("meal")
       this.namespace = "" // or this.namespace = "/"

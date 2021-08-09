@@ -5,6 +5,6 @@ function fetchMenu() {
 }
 
 export const useMenuQuery = ({ options = {} } = {}) => {
-  const defaultOptions = { staleTime: 0 }
+  const defaultOptions = { staleTime: 0, refetchOnWindowFocus: false }
   return useQuery("menu", fetchMenu, { ...defaultOptions, ...options })
 }
