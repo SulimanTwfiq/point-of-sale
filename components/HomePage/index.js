@@ -20,7 +20,7 @@ const HomePage = () => {
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
         />
-        <div className="flex items-center justify-between my-7">
+        <div className="flex items-center justify-between mb-9 mt-7">
           <h2 className="text-lg font-bold text-white ">Choose Dishes</h2>
           <SelectOrderType />
         </div>
