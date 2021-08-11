@@ -7,7 +7,7 @@ const DishCard = ({ item, onClick }) => {
   return (
     <div
       onClick={onClick}
-      className="h-[250px] pt-[148px] relative px-3 py-6 text-sm text-center text-white cursor-pointer bg-secondary-1100 rounded-2xl "
+      className="active:shadow-xl	 h-[250px] pt-[148px] relative px-3 py-6 text-sm text-center text-white cursor-pointer bg-secondary-1100 rounded-2xl "
     >
       <div className="absolute left-0 right-0 m-auto text-center top-[-25px]">
         <Image
