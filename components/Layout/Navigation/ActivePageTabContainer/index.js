@@ -1,8 +1,8 @@
 import clsx from "clsx"
-import styles from "./ActivePageTab.module.scss"
+import styles from "./ActivePageTabContainer.module.scss"
 import { motion } from "framer-motion"
 
-const ActivePageTab = () => {
+const ActivePageTabContainer = () => {
   return (
     <motion.div
       animate
@@ -27,4 +27,4 @@ const AnglesCurves = () => {
   )
 }
 
-export default ActivePageTab
+export default ActivePageTabContainer

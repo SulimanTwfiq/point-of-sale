@@ -3,7 +3,7 @@ import Image from "next/image"
 import clsx from "clsx"
 import { useRouter } from "next/router"
 import { AnimateSharedLayout } from "framer-motion"
-import ActivePageTab from "./ActivePageTab"
+import ActivePageTabContainer from "./ActivePageTabContainer"
 
 const Navigation = () => {
   return (
@@ -38,7 +38,7 @@ const PagesTabs = () => {
           const isItTheSelectedPage = router.pathname === page.url
           return (
             <div className="relative" key={page.url}>
-              {isItTheSelectedPage && <ActivePageTab />}
+              {isItTheSelectedPage && <ActivePageTabContainer />}
 
               <Button
                 variant={isItTheSelectedPage ? "solid" : "none"}
