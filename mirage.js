@@ -1,9 +1,9 @@
 import { Server, Model, RestSerializer, hasMany, belongsTo, Factory } from "miragejs"
 import { randomIntFromInterval } from "utills/common"
 import faker from "faker"
-export function makeServer({ environment = "test" } = {}) {
+export function makeServer({ environment } = {}) {
   return new Server({
-    environment,
+    // environment,
     serializers: {
       application: RestSerializer,
       menu: RestSerializer.extend({

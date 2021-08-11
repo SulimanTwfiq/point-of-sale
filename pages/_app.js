@@ -7,9 +7,10 @@ import "react-toastify/dist/ReactToastify.css"
 
 const queryClient = new QueryClient()
 
-if (process.env.NODE_ENV === "development") {
-  makeServer({ environment: "development" })
-}
+// if (process.env.NODE_ENV === "development") {
+// makeServer({ environment: "development" })
+// }
+makeServer() //
 
 function MyApp({ Component, pageProps }) {
   // return <Component {...pageProps} />
