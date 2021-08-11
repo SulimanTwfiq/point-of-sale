@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react"
+import React, { useEffect, useReducer, useState } from "react"
 import Cart from "./Cart"
 import { cartReducer, initialCartState } from "utills/reducers/cartReducer"
 import Header from "./Header"
@@ -11,8 +11,9 @@ import { useMenuQuery } from "hooks/react-query/useMenu"
 const HomePage = () => {
   const menuQuery = useMenuQuery()
   const [cart, dispatchCart] = useReducer(cartReducer, initialCartState)
-  const [selectedCategory, setSelectedCategory] = useState(menuQuery.data.menus[0].name)
+  const [selectedCategory, setSelectedCategory] = useState(null)
   const [dishSearch, setDishSearch] = useState("")
+
   return (
     <div className="grid h-screen grid-cols-[2fr,1fr]">
       {/* Left section  */}
