@@ -7,8 +7,7 @@ import clsx from "clsx"
 import ListOfCardsAnimation from "./ListOfCardsAnimation"
 
 const DishesList = ({ dispatchCart, selectedCategory, dishSearch }) => {
-  const { isLoading, error, data, isError, isSuccess } = useMenuQuery()
-  console.log("data", data)
+  const { isLoading, data, isError } = useMenuQuery()
   if (isLoading || !selectedCategory) {
     return <p>loading ...</p>
   }
