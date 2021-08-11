@@ -23,7 +23,12 @@ const PagesTabs = () => {
     { url: "/messages", icon: "messages.svg" },
     { url: "/notifications", icon: "notifications.svg" },
     { url: "/settings", icon: "settings.svg" },
-    { url: "/logout", icon: "logout.svg" },
+    {
+      url: "/logout",
+      icon: "logout.svg",
+      onClick: () =>
+        alert("Sorry you cannot logout , we dont have this functionality at this moment ."),
+    },
   ]
 
   return (
@@ -41,7 +46,13 @@ const PagesTabs = () => {
                   "h-14 w-14 translate-x-0 ",
                   isItTheSelectedPage && "shadow-tertiary"
                 )}
-                onClick={() => router.push(page.url)}
+                onClick={() => {
+                  if (page.onClick) {
+                    page.onClick()
+                  } else {
+                    router.push(page.url)
+                  }
+                }}
               >
                 <Image
                   src={`/icons/pages/${page.icon}`}
