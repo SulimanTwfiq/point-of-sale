@@ -25,7 +25,7 @@ const HomePage = () => {
         />
         <div className="flex items-center justify-between mb-9 mt-7">
           <h2 className="text-lg font-bold text-white ">Choose Dishes</h2>
-          <SelectOrderType />
+          <Select className="w-32" options={orderTypes} />
         </div>
         <DishesList
           menuQuery={menuQuery}
@@ -40,7 +40,4 @@ const HomePage = () => {
   )
 }
 
-const SelectOrderType = () => {
-  return <Select className="w-32" options={orderTypes} />
-}
 export default HomePage

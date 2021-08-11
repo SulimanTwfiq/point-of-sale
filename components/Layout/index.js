@@ -16,16 +16,16 @@ const Layout = ({ children }) => {
 
 const SplashScreen = ({ children }) => {
   // if the APIs are still loading ,show splash screen
-  const menuQuery = useMenuQuery({})
+  const menuQuery = useMenuQuery()
 
   return (
     <>
       <AnimatePresence>
         {menuQuery.isLoading && (
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0, scale: 0 }}
+            exit={{ opacity: 0 }}
             className="flex flex-col items-center justify-center h-screen"
           >
             <p className="text-3xl">Welcome to the best </p>

@@ -2,7 +2,6 @@ import React from "react"
 import { Tabs, Tab } from "components/shared"
 
 const MenuCategoriesTabs = ({ menuQuery, selectedCategory, setSelectedCategory }) => {
-  console.log("selectedCategory", selectedCategory)
   return (
     <Tabs>
       {menuQuery.data.menus.map((t) => (
