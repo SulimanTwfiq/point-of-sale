@@ -22,14 +22,6 @@ function getVariantStyle(variant) {
     default:
       break
   }
-
-  // if (variant === "solid" || !variant) {
-  //   return "text-white bg-tertiary-450"
-  // }
-  // if (variant === "outline") {
-  //   return "border border-gray-700	text-tertiary-450 "
-  // }
-  // if(variant==="")
 }
 
 export default Button

@@ -72,7 +72,7 @@ export function makeServer({ environment } = {}) {
 
     routes() {
       this.namespace = "api"
-      this.timing = 0
+      this.timing = 1500
       this.resource("menu")
       this.resource("meal")
       this.namespace = "" // or this.namespace = "/"

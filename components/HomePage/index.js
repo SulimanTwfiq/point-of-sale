@@ -6,10 +6,12 @@ import MenuCategoriesTabs from "./MenuCategoriesTabs"
 import { orderTypes } from "utills/constants"
 import { Select } from "components/shared"
 import DishesList from "./DishesList"
+import { useMenuQuery } from "hooks/react-query/useMenu"
 
 const HomePage = () => {
+  const menuQuery = useMenuQuery()
   const [cart, dispatchCart] = useReducer(cartReducer, initialCartState)
-  const [selectedCategory, setSelectedCategory] = useState(null)
+  const [selectedCategory, setSelectedCategory] = useState(menuQuery.data.menus[0].name)
   const [dishSearch, setDishSearch] = useState("")
   return (
     <div className="grid h-screen grid-cols-[2fr,1fr]">
@@ -17,6 +19,7 @@ const HomePage = () => {
       <div className="p-6 pb-0 ">
         <Header dishSearch={dishSearch} setDishSearch={setDishSearch} />
         <MenuCategoriesTabs
+          menuQuery={menuQuery}
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
         />
@@ -25,6 +28,7 @@ const HomePage = () => {
           <SelectOrderType />
         </div>
         <DishesList
+          menuQuery={menuQuery}
           dishSearch={dishSearch}
           dispatchCart={dispatchCart}
           selectedCategory={selectedCategory}

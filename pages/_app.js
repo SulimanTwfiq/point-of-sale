@@ -13,8 +13,6 @@ const queryClient = new QueryClient()
 makeServer() //
 
 function MyApp({ Component, pageProps }) {
-  // return <Component {...pageProps} />
-
   return (
     <QueryClientProvider client={queryClient}>
       <Layout>

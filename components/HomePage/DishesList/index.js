@@ -6,8 +6,8 @@ import styles from "./DishesList.module.scss"
 import clsx from "clsx"
 import ListOfCardsAnimation from "./ListOfCardsAnimation"
 
-const DishesList = ({ dispatchCart, selectedCategory, dishSearch }) => {
-  const { isLoading, data, isError } = useMenuQuery()
+const DishesList = ({ menuQuery, dispatchCart, selectedCategory, dishSearch }) => {
+  const { isLoading, data, isError } = menuQuery
   if (isLoading || !selectedCategory) {
     return <p>loading ...</p>
   }

@@ -15,7 +15,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body className="min-h-screen text-white bg-primary-1100">
+        <body className="min-h-screen overflow-hidden text-white bg-primary-1100">
           <Main />
           <NextScript />
         </body>
