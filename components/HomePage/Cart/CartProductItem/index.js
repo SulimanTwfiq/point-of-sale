@@ -2,10 +2,10 @@ import React from "react"
 import { Button, TextInput } from "components/shared"
 import Image from "next/image"
 import { ACTIONS } from "utills/reducers/cartReducer"
-import { formatPrice } from "utills/common"
+import { formatPrice, getImageFromUnsplashAPI } from "utills/common"
 
 const CartProductItem = ({ item, dispatchCart }) => {
-  const { id, name, quantity, price, img } = item
+  const { id, name, quantity, price, imagesUnsplashCollectionId } = item
 
   return (
     <div className="grid gap-3 mb-6 grid-cols-[1fr,50px]">
@@ -13,7 +13,12 @@ const CartProductItem = ({ item, dispatchCart }) => {
       <div>
         <div className="grid gap-2 mb-2 grid-cols-[35px,1fr,50px]">
           <Image
-            src={`https://source.unsplash.com/160x160/?${img},${id}`}
+            src={getImageFromUnsplashAPI({
+              imagesUnsplashCollectionId,
+              itemId: id,
+              width: "160",
+              height: "160",
+            })}
             className="rounded-full"
             alt={name}
             width={35}

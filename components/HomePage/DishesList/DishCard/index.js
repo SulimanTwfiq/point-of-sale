@@ -1,9 +1,9 @@
 import React from "react"
 import Image from "next/image"
-import { formatPrice } from "utills/common"
+import { formatPrice, getImageFromUnsplashAPI } from "utills/common"
 
 const DishCard = ({ item, onClick }) => {
-  const { name, price, bowlsAvailable, img, id } = item
+  const { name, price, bowlsAvailable, id, imagesUnsplashCollectionId } = item
   return (
     <div
       onClick={onClick}
@@ -11,9 +11,12 @@ const DishCard = ({ item, onClick }) => {
     >
       <div className="absolute left-0 right-0 m-auto text-center top-[-25px]">
         <Image
-          // src={`https://source.unsplash.com/collection/${imagesCollectionId}/150x100?id=${name}`}
-          src={`https://source.unsplash.com/160x160/?${img},${id}`}
-          // src={"https://source.unsplash.com/collection/190727/1600x900"}
+          src={getImageFromUnsplashAPI({
+            imagesUnsplashCollectionId,
+            itemId: id,
+            width: "160",
+            height: "160",
+          })}
           alt={name}
           width={160}
           height={160}

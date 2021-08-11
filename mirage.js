@@ -46,27 +46,27 @@ export function makeServer({ environment = "test" } = {}) {
 
       server.createList("meal", 10, {
         menu: hotDishes,
-        img: "hot,dish",
+        imagesUnsplashCollectionId: "1117933",
       })
       server.createList("meal", 4, {
         menu: coldDishes,
-        img: "cold,dish",
+        imagesUnsplashCollectionId: "1117933",
       })
       server.createList("meal", 12, {
         menu: soup,
-        img: "soup",
+        imagesUnsplashCollectionId: "7770560",
       })
       server.createList("meal", 14, {
         menu: grill,
-        img: "grill",
+        imagesUnsplashCollectionId: "2504231",
       })
       server.createList("meal", 3, {
         menu: appetizer,
-        img: "appetizer",
+        imagesUnsplashCollectionId: "1591989",
       })
       server.createList("meal", 1, {
         menu: Dessert,
-        img: "Dessert",
+        imagesUnsplashCollectionId: "8914877",
       })
     },
 
