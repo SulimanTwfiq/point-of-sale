@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { Tabs, Tab } from "components/shared"
+import { Tabs } from "components/shared"
 
 const MenuCategoriesTabs = ({ menuQuery, selectedCategory, setSelectedCategory }) => {
   useEffect(() => {
@@ -12,13 +12,13 @@ const MenuCategoriesTabs = ({ menuQuery, selectedCategory, setSelectedCategory }
     <Tabs>
       {menuQuery.isFetched &&
         menuQuery.data.menus.map((t) => (
-          <Tab
+          <Tabs.Tab
             key={t.name}
             isActive={selectedCategory === t.name}
             onClick={() => setSelectedCategory(t.name)}
           >
             {t.name}
-          </Tab>
+          </Tabs.Tab>
         ))}
     </Tabs>
   )

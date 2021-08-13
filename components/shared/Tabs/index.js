@@ -9,7 +9,8 @@ const Tabs = ({ children }) => {
     </AnimateSharedLayout>
   )
 }
-export const Tab = ({ isActive = false, children, ...reset }) => {
+// eslint-disable-next-line react/display-name
+Tabs.Tab = ({ isActive = false, children, ...reset }) => {
   return (
     <motion.li
       animate
