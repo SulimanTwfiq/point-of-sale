@@ -6,5 +6,5 @@ https://pos-suliman.vercel.app
 <h3> Made with love using : </h3>
 reactjs (nextjs) , tailwindcss , react-query , miragejs , framer-motion.
 
+<h3>To run the project do    git clone =>  npm i =>  npm run dev </h3>
 
-To run the project do    git clone =>  npm i =>  npm run dev 
