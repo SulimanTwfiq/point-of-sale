@@ -14,12 +14,20 @@ makeServer() //
 
 function MyApp({ Component, pageProps }) {
   return (
-    <QueryClientProvider client={queryClient}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-      <ToastContainer />
-    </QueryClientProvider>
+    <>
+      <div className="flex items-center justify-center h-screen blok lg:hidden">
+        <h1 className="text-xl md:text-3xl text-tertiary-400">Small screens are not supported</h1>
+      </div>
+
+      <div className="hidden lg:block">
+        <QueryClientProvider client={queryClient}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+          <ToastContainer />
+        </QueryClientProvider>
+      </div>
+    </>
   )
 }
 
